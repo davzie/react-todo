@@ -7,7 +7,7 @@ export default function TodoList() {
     let initialTodos = new Array<TTodoListItem>()
     const [todos, setTodos] = useState(initialTodos)
 
-    const addNewTodo = (title) => {
+    const addNewTodo = (title: string) => {
         let todoItem: TTodoListItem
         todoItem = {
             id: todos.length + 1,

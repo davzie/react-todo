@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types'
 import {useState} from 'react'
 
-function TodoListItem(props) {
+interface TodoListItemProps {
+    id: number,
+    title: string,
+    checked: boolean
+}
+
+function TodoListItem(props: TodoListItemProps) {
     let [isChecked, setIsChecked] = useState(props.checked)
 
-    let toggleTodo = (e)=>{
+    let toggleTodo = (e: any)=>{
         setIsChecked(e.target.checked)
     }
 

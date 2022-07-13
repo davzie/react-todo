@@ -2,10 +2,14 @@ import PropTypes from "prop-types";
 import { useRef } from "react";
 import TodoListItem from "./TodoListItem";
 
-function TodoListInput(props) {
+interface TodoListInputProps {
+    onAdd: CallableFunction
+}
+
+function TodoListInput(props: TodoListInputProps) {
     let title = useRef('')
 
-    const handleInput = (event) => {
+    const handleInput = (event: any) => {
         if (event.key === 'Enter') {
             props.onAdd(title.current)
             title.current = ''
